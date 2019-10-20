@@ -4,7 +4,7 @@ const Schema = use('Schema');
 class PerfisSchema extends Schema {
   up() {
     this.create('perfis', table => {
-      table.increments();
+      table.increments().primary();
       table.string('type').unique();
       table.string('description');
       table.timestamps();

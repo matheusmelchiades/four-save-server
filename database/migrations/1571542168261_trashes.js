@@ -4,7 +4,7 @@ const Schema = use('Schema');
 class TrashesSchema extends Schema {
   up() {
     this.create('trashes', table => {
-      table.increments();
+      table.increments().primary();
       table.string('name');
       table
         .integer('trashCategoryId')

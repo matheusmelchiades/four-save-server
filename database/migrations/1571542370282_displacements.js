@@ -4,7 +4,7 @@ const Schema = use('Schema');
 class DisplacementsSchema extends Schema {
   up() {
     this.create('displacements', table => {
-      table.increments();
+      table.increments().primary();
       table
         .integer('userIdOrigin')
         .references('id')

@@ -4,7 +4,7 @@ const Schema = use('Schema');
 class ScoresSchema extends Schema {
   up() {
     this.create('scores', table => {
-      table.increments();
+      table.increments().primary();
       table.integer('score');
       table.float('price');
       table.timestamps();
