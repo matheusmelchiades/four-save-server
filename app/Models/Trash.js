@@ -1,6 +1,10 @@
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
 const Model = use('Model');
 
-class Trash extends Model {}
+class Trash extends Model {
+  findWithScore() {
+    return this.hasMany('App/Models/TrashCategory');
+  }
+}
 
 module.exports = Trash;

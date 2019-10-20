@@ -14,9 +14,9 @@ class DisplacementsSchema extends Schema {
         .references('id')
         .inTable('users');
       table
-        .integer('userTrashesId')
+        .integer('trashId')
         .references('id')
-        .inTable('users');
+        .inTable('trashes');
       table.float('originLatitude');
       table.float('originLongitude');
       table.float('destinyLatitude');
