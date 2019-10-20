@@ -7,15 +7,17 @@ class SessionController {
     try {
       const { username, password } = request.post();
 
-      const userDb = await model.query().where('username', '=', username).fetch();
+      const userDb = await model
+        .query()
+        .where('username', '=', username)
+        .fetch();
 
       const compare = await Hash.make(password, userDb.password);
 
       if (!compare) return { error: 'UnAthorizate' };
-      console.log(compare);
+
       return { status: 'loged' };
     } catch (err) {
-      console.log(err);
       Logger.debug(err.details);
       return { error: err.details };
     }
