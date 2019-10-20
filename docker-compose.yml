@@ -4,7 +4,7 @@ services:
   postgres:
     image: mdillon/postgis
     restart: always
-    container_name: happyHarvestDB
+    container_name: fourSaveDB
     environment:
       - POSTGRES_DB=${DB_DATABASE}
       - POSTGRES_USER=${DB_USER}

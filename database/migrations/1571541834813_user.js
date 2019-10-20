@@ -18,7 +18,10 @@ class UserSchema extends Schema {
       table.string('password', 60).notNullable();
       table.float('latitude').notNullable();
       table.float('longitude').notNullable();
-      table.integer('perfilId');
+      table
+        .integer('perfilId')
+        .references('id')
+        .inTable('perfis');
       table.timestamps();
     });
   }
