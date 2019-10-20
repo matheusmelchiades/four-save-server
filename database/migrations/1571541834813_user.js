@@ -5,8 +5,8 @@ class UserSchema extends Schema {
   up() {
     this.create('users', table => {
       table.increments().primary();
-      table.string('firstName').notNullable();
-      table.string('lastName').notNullable();
+      table.string('firstname').notNullable();
+      table.string('lastname').notNullable();
       table
         .string('email', 254)
         .notNullable()
@@ -15,7 +15,11 @@ class UserSchema extends Schema {
         .string('username', 80)
         .notNullable()
         .unique();
-      table.string('password', 60).notNullable();
+      table.string('password').notNullable();
+      table.integer('score').defaultTo(0);
+      table.string('address').notNullable();
+      table.string('region').notNullable();
+      table.string('country').notNullable();
       table.float('latitude').notNullable();
       table.float('longitude').notNullable();
       table

@@ -1,11 +1,16 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema');
 
-class TrashesSchema extends Schema {
+class UserTrashesSchema extends Schema {
   up() {
     this.create('trashes', table => {
       table.increments().primary();
-      table.string('name');
+      table.string('description');
+      table.integer('quantity');
+      table
+        .integer('userId')
+        .references('id')
+        .inTable('users');
       table
         .integer('trashCategoryId')
         .references('id')
@@ -19,4 +24,4 @@ class TrashesSchema extends Schema {
   }
 }
 
-module.exports = TrashesSchema;
+module.exports = UserTrashesSchema;

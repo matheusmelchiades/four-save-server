@@ -7,6 +7,7 @@ class PerfisSchema extends Schema {
       table.increments().primary();
       table.string('type').unique();
       table.string('description');
+      table.boolean('administration').defaultTo(false);
       table.timestamps();
     });
   }

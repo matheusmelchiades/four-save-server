@@ -19,3 +19,12 @@ Route.get('/', () => {
 });
 
 Route.get('/perfil', 'PerfilController.show');
+Route.post('/perfil', 'PerfilController.store');
+
+Route.post('/user', 'UserController.store').validator('UserStore');
+
+Route.post('/trash', 'TrashController.store').validator('TrashStore');
+
+Route.post('/score', 'ScoreController.store').validator('ScoreStore');
+
+Route.post('/displacement', 'DisplacementController.store').validator('DisplacementStore');

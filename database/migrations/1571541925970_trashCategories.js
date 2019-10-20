@@ -6,7 +6,7 @@ class TrashCategoriesSchema extends Schema {
     this.create('trashCategories', table => {
       table.increments().primary();
       table.string('type').unique();
-      table.string('description');
+      table.text('description');
       table
         .integer('scoreId')
         .references('id')
