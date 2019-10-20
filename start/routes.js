@@ -28,3 +28,5 @@ Route.post('/trash', 'TrashController.store').validator('TrashStore');
 Route.post('/score', 'ScoreController.store').validator('ScoreStore');
 
 Route.post('/displacement', 'DisplacementController.store').validator('DisplacementStore');
+
+Route.post('/login', 'SessionController.login');
