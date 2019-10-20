@@ -21,8 +21,8 @@ class DisplacementsSchema extends Schema {
       table.float('originLongitude');
       table.float('destinyLatitude');
       table.float('destinyLongitude');
-      table.boolean('producerValidation').toDefault(false);
-      table.boolean('consumerValidation').toDefault(false);
+      table.boolean('producerValidation').defaultTo(false);
+      table.boolean('consumerValidation').defaultTo(false);
       table.timestamps();
     });
   }
